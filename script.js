@@ -38,6 +38,11 @@ const col = collection(db, 'retseptid');
 const oun = document.querySelector('.oun');
 const munad = document.querySelector('.munad');
 const hakkliha = document.querySelector('.hakkliha');
+const kala = document.querySelector('.kala');
+const jahu = document.querySelector('.jahu');
+const juust = document.querySelector('.juust');
+const porgand = document.querySelector('.porgand');
+const kartul = document.querySelector('.kartul');
 
 if (oun){
   oun.addEventListener("click", function() {
@@ -69,36 +74,98 @@ if (munad){
     });
   });
 }
-
 if (hakkliha){
   hakkliha.addEventListener("click", function() {
     // Query filter what we search
     const q = query(col, where("hakkliha", "==", "true"));
-    const kuvar = document.querySelector('.kuvar');
+    //const kuvar = document.querySelector('.kuvar');
       
     // Get collection data
     onSnapshot(q, (snapshot) => {
       let retseptid = [];
       snapshot.docs.forEach((doc) => {
         retseptid.push({ ...doc.data(), id: doc.id });
-        
       });
-      //create element and display
-
-      const newDiv = document.createElement("div");
-
-      // and give it some content
-      const newContent = document.createTextNode(retseptid);
-
-      // add the text node to the newly created div
-      newDiv.appendChild(newContent);
-
-      kuvar.appendChild(newDiv);
-
       console.log(retseptid);
     });
   });
 }
+if (kala){
+  kala.addEventListener("click", function() {
+    // Query filter what we search
+    const q = query(col, where("kala", "==", "true"));
+      
+    // Get collection data
+    onSnapshot(q, (snapshot) => {
+      let retseptid = [];
+      snapshot.docs.forEach((doc) => {
+        retseptid.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(retseptid);
+    });
+  });
+}
+if (jahu){
+  jahu.addEventListener("click", function() {
+    // Query filter what we search
+    const q = query(col, where("jahu", "==", "true"));
+      
+    // Get collection data
+    onSnapshot(q, (snapshot) => {
+      let retseptid = [];
+      snapshot.docs.forEach((doc) => {
+        retseptid.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(retseptid);
+    });
+  });
+}
+if (juust){
+  juust.addEventListener("click", function() {
+    // Query filter what we search
+    const q = query(col, where("juust", "==", "true"));
+      
+    // Get collection data
+    onSnapshot(q, (snapshot) => {
+      let retseptid = [];
+      snapshot.docs.forEach((doc) => {
+        retseptid.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(retseptid);
+    });
+  });
+}
+if (porgand){
+  porgand.addEventListener("click", function() {
+    // Query filter what we search
+    const q = query(col, where("porgand", "==", "true"));
+      
+    // Get collection data
+    onSnapshot(q, (snapshot) => {
+      let retseptid = [];
+      snapshot.docs.forEach((doc) => {
+        retseptid.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(retseptid);
+    });
+  });
+}
+if (kartul){
+  kartul.addEventListener("click", function() {
+    // Query filter what we search
+    const q = query(col, where("kartul", "==", "true"));
+      
+    // Get collection data
+    onSnapshot(q, (snapshot) => {
+      let retseptid = [];
+      snapshot.docs.forEach((doc) => {
+        retseptid.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(retseptid);
+    });
+  });
+}
+
 
 
 // Display data
@@ -111,4 +178,4 @@ search.addEventListener("click", function(){
 });*/
 //------------------------------------
 
-console.log("Hello. It works");
+//console.log("SMTH wrong");
